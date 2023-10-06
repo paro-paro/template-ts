@@ -1,0 +1,55 @@
+{
+  "name": "template-ts",
+  "type": "module",
+  "version": "0.1.0",
+  "packageManager": "pnpm@8.8.0",
+  "description": "",
+  "author": "Antonio PG <aparodyg@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/antfu/template-ts#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paro-paro/template-ts.git"
+  },
+  "bugs": "https://github.com/paro-paro/template-ts/issues",
+  "keywords": [],
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "unbuild --stub",
+    "build": "unbuild",
+    "lint": "eslint .",
+    "test": "vitest",
+    "typecheck": "tsc --noEmit",
+    "prepare": "simple-git-hooks"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^1.0.0-beta.12",
+    "@types/node": "^20.7.0",
+    "eslint": "^8.50.0",
+    "lint-staged": "^14.0.1",
+    "simple-git-hooks": "^2.9.0",
+    "typescript": "^5.2.2",
+    "unbuild": "^2.0.0",
+    "vite": "^4.4.9",
+    "vitest": "^0.34.5"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged"
+  },
+  "lint-staged": {
+    "*": "eslint --fix"
+  }
+}
